@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "loanstreet-api-client"
+version = "0.1.0"
+description = "Client for the LoanStreet GraphQL API in Python"
+authors = ["Andrew Chong <i@andrewhchong.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+gql = {extras = ["all"], version = "^2.0.0", allow-prereleases = true}
+graphene = "2.1.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
