@@ -7,7 +7,7 @@ Install [Poetry](https://python-poetry.org/)
 
 ## Using the API client
 
-Before using the API client, you need to create a virtual environment:
+Before using the API client, you need to create a virtual environment in the base `client` folder:
 
 ```sh
 poetry shell

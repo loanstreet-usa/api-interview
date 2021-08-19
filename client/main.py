@@ -1,8 +1,7 @@
-import pprint as pp
-
 from client import LoanStreetClient
 
 if __name__ == "__main__":
+  import pprint as pp
 
   client = LoanStreetClient()
 
