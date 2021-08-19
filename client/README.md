@@ -13,6 +13,12 @@ Before using the API client, you need to create a virtual environment in the bas
 poetry shell
 ```
 
+and install the Python dependencies:
+
+```sh
+poetry install
+```
+
 You must also have the server running (see `client` folder for more information)
 
 To use the API client, instantiate a client object from LoanStreetClient.
