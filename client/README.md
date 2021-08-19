@@ -13,6 +13,8 @@ Before using the API client, you need to create a virtual environment:
 poetry shell
 ```
 
+You must also have the server running (see `client` folder for more information)
+
 To use the API client, instantiate a client object from LoanStreetClient.
 
 ```python
@@ -25,6 +27,12 @@ result = client.get_all_loans()
 ### Examples
 
 #### Get all loans
+
+client = LoanStreetClient()
+
+result = client.get_all_loans()
+
+pp.pprint(result)
 
 #### Create loan
 
