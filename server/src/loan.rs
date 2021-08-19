@@ -49,6 +49,14 @@ impl Loan {
         Ok(loans)
     }
 
+    pub async fn get_loan(pool: &SqlitePool, id: &i32) -> Result<Option<Loan>> {
+        let loan: Option<Loan> = sqlx::query_as!(Loan, "SELECT * FROM loan WHERE id=$1", id)
+            .fetch_optional(pool)
+            .await?;
+
+        Ok(loan)
+    }
+
     pub async fn update(
         pool: &SqlitePool,
         id: &i32,

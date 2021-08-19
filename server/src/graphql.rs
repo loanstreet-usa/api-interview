@@ -31,6 +31,32 @@ pub struct QueryRoot;
 
 #[async_graphql::Object]
 impl QueryRoot {
+    async fn loan(&self, ctx: &Context<'_>, id: i32) -> FieldResult<Option<Loan>> {
+        let pool = ctx.data::<SqlitePool>();
+        let item = Loan::get_loan(&pool, &id).await?;
+
+        Ok(item)
+    }
+    // async fn update_loan(&self, ctx: &Context<'_>, id: i32) -> FieldResult<Option<Loan>> {
+    //     let pool = ctx.data::<SqlitePool>();
+    //     // let id = id.parse::<i32>()?;
+    //     let item = Loan::get_loan(&pool, &id).await?;
+
+    //     Ok(item)
+    // }
+    // async fn loan(&self, ctx: &Context<'_>, id: &i32) -> FieldResult<Loan> {
+    //     let pool = ctx.data::<SqlitePool>();
+    //     let item = Loan::get_loan(&pool, &id).await?;
+    //     Ok(item)
+    // }
+
+    // async fn loan(&self, ctx: &Context<'_>, id: i32) -> Option<Loan> {
+    //     // ctx.data_unchecked::<StarWars>().human(&id).map(Human)
+    //     let pool = ctx.data::<SqlitePool>();
+    //     let item = Loan::get_loan(&pool).await?;
+    //     Ok(item);
+    // }
+
     async fn loans(&self, ctx: &Context<'_>) -> FieldResult<Vec<Loan>> {
         let pool = ctx.data::<SqlitePool>();
         let items = Loan::list(&pool).await?;
@@ -114,21 +140,6 @@ impl MutationRoot {
 
         Ok(item)
     }
-
-    // async fn toggle_complete(&self, ctx: &Context<'_>, id: ID) -> FieldResult<Option<Loan>> {
-    //     let pool = ctx.data::<SqlitePool>();
-    //     let id = id.parse::<String>()?;
-
-    //     let item = Loan::toggle_complete(&pool, &id).await?;
-
-    //     SimpleBroker::publish(LoanChanged {
-    //         mutation_type: MutationType::Updated,
-    //         id: id.into(),
-    //         item: item.clone(),
-    //     });
-
-    //     Ok(item)
-    // }
 }
 
 #[async_graphql::Enum]
