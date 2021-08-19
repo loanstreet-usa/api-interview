@@ -31,6 +31,24 @@ class LoanStreetClient:
         result = self.gql_client.execute(query)
         return result
 
+    def get_loan(self, id):
+        params = {'id': id}
+        query = gql(
+            """
+            query ($id: Int!) {
+                loan (id: $id) {
+                    id
+                    amount
+                    interestRate
+                    loanLengthMonths
+                    monthlyPaymentAmount
+                }
+            }
+        """
+        )
+        result = self.gql_client.execute(query, variable_values=params)
+        return result
+
     # TODO: Finish create_loan()
     def create_loan(self, params):
         query = gql(    """

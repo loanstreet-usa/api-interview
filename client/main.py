@@ -25,7 +25,8 @@ if __name__ == "__main__":
   # result = pp.pprint(client.get_all_loans())
 
   # result = client.create_loan(params)
-  result = client.update_loan(update_params)
+  # result = client.update_loan(update_params)
   # result = client.get_all_loans()
+  result = client.get_loan(1)
 
   pp.pprint(result)
