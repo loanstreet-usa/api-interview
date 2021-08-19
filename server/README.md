@@ -2,7 +2,7 @@
 
 This GraphQL API implements basic CRUD behavior and subscriptions.
 
-## Running
+## Running the server
 
 Install [Rust](https://www.rust-lang.org/) so you can use `cargo`
 
@@ -10,6 +10,13 @@ Use the Rust nightly build:
 
 ```sh
 rustup default nightly
+```
+
+Install [Sqlite3](https://sqlite.org/index.html)
+If you are on Mac/Linux, you can do:
+
+```sh
+brew install sqlite3
 ```
 
 Clone the repo and in the base directory, run:
