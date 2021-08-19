@@ -1,54 +1,31 @@
-# from dotenv import load_dotenv
-
-from gql import Client, gql
-from gql.transport.requests import RequestsHTTPTransport
 import pprint as pp
 
-transport = RequestsHTTPTransport(
-    url="http://127.0.0.1:8080", verify=True, retries=3,
-)
-
-client = Client(transport=transport, fetch_schema_from_transport=True)
-
-query = gql(
-    """
-    query {
-      loans {
-        id
-        amount
-        interestRate
-        loanLengthMonths
-        monthlyPaymentAmount
-      }
-    }
-"""
-)
-
-# TODO: Create loan
-
-create_loan_query = gql(
-    """
-    query getContinentName ($code: ID!) {
-      continent (code: $code) {
-        name
-      }
-    }
-"""
-)
-)
-
-
-# TODO: Get loan
-
-# TODO: Update loan
-
-# TODO: Get all loans - optional
-
-result = client.execute(query)
-pp.pprint(result)
-
-
+from client import LoanStreetClient
 
 if __name__ == "__main__":
-    result = client.execute(query)
-    pp.pprint(result)
+
+  client = LoanStreetClient()
+
+  params = {
+    'amount': 5203.01,
+    'interest_rate': 1.01,
+    'loan_length_months': 30,
+    'monthly_payment_amount': 5.43
+  }
+
+  update_params = {
+    'id': 1,
+    'amount': 2.01,
+    'interest_rate': 1.01,
+    'loan_length_months': 30,
+    'monthly_payment_amount': 5.43
+  }
+
+
+  # result = pp.pprint(client.get_all_loans())
+
+  # result = client.create_loan(params)
+  result = client.update_loan(update_params)
+  # result = client.get_all_loans()
+
+  pp.pprint(result)
