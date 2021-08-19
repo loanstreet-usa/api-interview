@@ -1,4 +1,4 @@
-LoanStreet API Client
+# LoanStreet API Client
 
 ## Installation
 
