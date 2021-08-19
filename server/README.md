@@ -19,7 +19,12 @@ If you are on Mac/Linux, you can do:
 brew install sqlite3
 ```
 
-Clone the repo and in the base directory, run:
+Create a sqlite3 database called `loanstreet.sqlite3`:
+
+```sh
+sqlite3 loanstreet.sqlite3
+
+Clone the repo and in the base `server` directory, run:
 
 ```sh
 cargo run
