@@ -4,20 +4,28 @@ This GraphQL API implements basic CRUD behavior and subscriptions.
 
 ## Running
 
-Clone the repo and run
+Install [Rust](https://www.rust-lang.org/) so you can use `cargo`
 
-```bash
+Use the Rust nightly build:
+
+```sh
+rustup default nightly
+```
+
+Clone the repo and in the base directory, run:
+
+```sh
 cargo run
 ```
 
 Open `http://localhost:8080` in your browser to see the GraphQL playground.
 
-## GraphQL queries
+## Example GraphQL queries
 
 ### Get all loans
 
 ```graphql
-query	{
+query {
   loans {
     id
     amount
@@ -27,6 +35,22 @@ query	{
   }
 }
 ```
+
+### Get one loan by ID
+
+```graphql
+query {
+  loan(id:1) {
+    id
+    amount
+    interestRate
+    loanLengthMonths
+    monthlyPaymentAmount
+  }
+}
+```
+
+Note that the query is `loan` and not `loans`.
 
 ### Subscribe to loans
 
