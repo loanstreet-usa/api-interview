@@ -50,3 +50,5 @@ print(result)
 - get_all_loans
 - create_loan
 - update_loan
+
+See function docstrings for more information
