@@ -21,12 +21,6 @@ if __name__ == "__main__":
     'monthly_payment_amount': 5.43
   }
 
-
-  # result = pp.pprint(client.get_all_loans())
-
-  # result = client.create_loan(params)
-  # result = client.update_loan(update_params)
-  # result = client.get_all_loans()
-  result = client.get_loan(1)
+  result = client.get_all_loans()
 
   pp.pprint(result)
