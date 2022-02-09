@@ -18,8 +18,8 @@ _**PLEASE DO NOT WORK MORE THAN SIX HOURS ON THIS PROJECT**_
         * Interest rate
         * Length of loan in months
         * Monthly payment amount
-    * Get the created loan
-    * Update the created loan
+    * Get the created loan, by an identifier
+    * Update the created loan, by an identifier
 * **Out of scope**: Delete, Authentication, Authorization
 * The deliverable shall include a sample programmatic client for the aforementioned server  
 _See [here](https://github.com/PyGithub/PyGithub) for an example_
@@ -44,4 +44,4 @@ interview process.  Please be prepared to answer questions such as:
 * What are the strengths and weaknesses of ABC framework?
 * How is XYZ persistence layer well-suited to your data model?
 * What situations may result in failure?
-* What considerations have you made in terms of creating a customer facing production application?
+* What considerations have you made in terms of a creating customer facing production application?
