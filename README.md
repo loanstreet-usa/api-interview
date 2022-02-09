@@ -44,4 +44,4 @@ interview process.  Please be prepared to answer questions such as:
 * What are the strengths and weaknesses of ABC framework?
 * How is XYZ persistence layer well-suited to your data model?
 * What situations may result in failure?
-* What considerations have you made in terms of a customer facing production application?
+* What considerations have you made in terms of creating a customer facing production application?
