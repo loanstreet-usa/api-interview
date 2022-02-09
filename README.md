@@ -18,8 +18,8 @@ _**PLEASE DO NOT WORK MORE THAN SIX HOURS ON THIS PROJECT**_
         * Interest rate
         * Length of loan in months
         * Monthly payment amount
-    * Get the created loan, by an identifier
-    * Update the created loan, by an identifier
+    * Get the created loan
+    * Update the created loan
 * **Out of scope**: Delete, Authentication, Authorization
 * The deliverable shall include a sample programmatic client for the aforementioned server  
 _See [here](https://github.com/PyGithub/PyGithub) for an example_
